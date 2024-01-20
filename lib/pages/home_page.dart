@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/components/my_bottom_navbar.dart';
+import 'package:ecommerce_app/pages/about_page.dart';
 import 'package:ecommerce_app/pages/cart_page.dart';
 import 'package:ecommerce_app/pages/shop_page.dart';
 import 'package:flutter/material.dart';
@@ -60,29 +61,44 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.grey[700],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.home,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      "Home",
-                      style: TextStyle(color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 25.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "Home",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.info,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      "About",
-                      style: TextStyle(color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AboutPage(),
+                        ));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 25.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.info,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "About",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ),

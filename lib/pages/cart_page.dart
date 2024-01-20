@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/components/cart_item.dart';
 import 'package:ecommerce_app/modules/cart.dart';
 import 'package:ecommerce_app/modules/shoe.dart';
+import 'package:ecommerce_app/pages/CheckOutPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -29,6 +30,32 @@ class CartPage extends StatelessWidget {
                           return CartItem(shoe: individual);
                         }),
                   ),
+                  Center(
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0))),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Colors.black87),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CheckOutPage()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              "CheckOut",
+                              style: TextStyle(
+                                  color: Colors.white60,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          )))
                 ],
               ),
             ));

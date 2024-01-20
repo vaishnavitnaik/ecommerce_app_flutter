@@ -13,6 +13,7 @@ class CartItem extends StatefulWidget {
 
 class _CartItemState extends State<CartItem> {
   void removeItemFromCart() {
+    print("HELP <M!>");
     Provider.of<Cart>(context, listen: false).removeItemFromCart(widget.shoe);
   }
 
